@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<script>
+function transformPhrase(phrase) {
+  phraseArray = phrase.split(' ');
+  for (var i=0; i<phraseArray.length; i++) {
+    phraseArray[i] = transformWord(phraseArray[i]);
+  }
+  return phraseArray.join(' ');
+}
+
+function transformWord(word) {
+  specialEndCharsArray = [
+    '.',
+    ',',
+    ':',
+    '-',
+    ';'
+    ];
+  for (var char of specialEndCharsArray) {
+    if ( word.endsWith(char) ) {
+      return transformWord(word.slice(0,-1)) + char;
+    }
+  }
+  if (word.length <= 2) {
+  	return word;
+  }else{
+  	return word[0]+shuffle(word.slice(1,-1))+word[word.length-1];
+  }
+}
+
+function shuffle (string) {
+  work_array = string.split('')
+  var i = 0
+    , j = 0
+    , temp = null
+
+  for (i = work_array.length - 1; i > 0; i -= 1) {
+    j = Math.floor(Math.random() * (i + 1));
+    temp = work_array[i];
+    work_array[i] = work_array[j];
+    work_array[j] = temp;
+  }
+  return work_array.join('');
+}
+
+</script>
+
+
+</HEAD>
+<BODY>
+<FORM ACTION="#" NAME="convert">
+Enter Text
+<INPUT TYPE=TEXT NAME="originalText" ONKEYUP="document.convert.transformedText.value = transformPhrase(document.convert.originalText.value)" size="500">
+<BR><BR>
+Transformed Text
+<INPUT TYPE=TEXT NAME="transformedText" DISABLED size="500">
+
+</FORM>
+</BODY>
+</HTML>

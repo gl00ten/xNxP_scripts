@@ -1,0 +1,9 @@
+# reverse_video_dir_list_example.txt
+# Example input for the (now improved) reverse_video_from_dir_list.sh
+# One directory per line. Paths can be absolute.
+
+ /media/ssarah/data_ext4/test1/38_bl2_tina1
+ /media/ssarah/data_ext4/test1/39_bl2_tina1
+ /media/ssarah/data_ext4/test1/37_bl2_tina1
+ /media/ssarah/data_ext4/test1/36_bl2_tina1
+

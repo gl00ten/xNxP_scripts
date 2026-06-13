@@ -1,0 +1,11 @@
+# auto_ssh_one_liner.txt
+# ARCHIVED.
+# This was literally just a personal autossh reverse tunnel one-liner
+# with a specific (now probably dead) hostname and port forward.
+#
+# Better expressed as:
+#   - an entry in ~/.ssh/config
+#   - a small wrapper script or systemd user service
+#   - or an alias
+#
+# Originally: messy_area/auto_ssh (no extension, 1 line)

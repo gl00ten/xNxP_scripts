@@ -1,0 +1,20 @@
+# gl00ten_net_caddy_setup.txt
+# Quick notes from setting up Caddy static site + ufw on a VPS (circa ~2020?).
+# Not a script.
+
+ufw allow ssh http https
+
+# installed caddy from instructions from website
+sudo caddy start --config /etc/caddy/Caddyfile
+sudo caddy stop
+
+## /etc/caddy/Caddyfile
+gl00ten.net {
+  root * /var/caddy/test1
+  file_server
+}
+
+find /var/caddy -type d -exec chmod 755 {} \;
+find /var/caddy -type f -exec chmod 644 {} \;
+
+
